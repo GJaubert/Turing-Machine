@@ -60,32 +60,33 @@ public class TuringMachine {
     String movement;
     //State nextState = findNextState(initialState, tape.get(head));
     Map.Entry<State, Symbol> mapKey = new AbstractMap.SimpleEntry<State, Symbol>(initialState, tape.getFromIndex(head));
+    //int i = 0;
     while (transitions.getTransitionsMap().get(mapKey) != null) {
-    // int i = 0;
     //   while (i < 5) {
       //System.out.println("Current State " + currentState.getName());
       nextState = transitions.getTransitionsMap().get(mapKey).iterator().next().getKey();
       symbolToWrite = transitions.getTransitionsMap().get(mapKey).iterator().next().getValue().getKey();
       movement = transitions.getTransitionsMap().get(mapKey).iterator().next().getValue().getValue();
       //Modificar MT
-      System.out.println("head: " + head);
-     // tape.changeValueOn(head, symbolToWrite);
-      Symbol readSymbol;    // Simbolo que vamos a leer para buscar transiciones en la siguiente iteración
+      tape.changeValueOn(head, symbolToWrite);
+      Symbol readSymbol;
       if (movement.equals("L")) {
-        readSymbol = tape.getLeftSymbol(head--);
+        moveHeadLeft();
+        readSymbol = tape.getFromIndex(head);
         if (head == -1) head = 0;
       }
-      else 
-        readSymbol = tape.getRightSymbol(head++);
+      else {
+        moveHeadRight();
+        readSymbol = tape.getFromIndex(head);
+      }
       // System.out.println("Next State: " + nextState.getName());
-      // System.out.println("Caracter leido: " + mapKey.getValue().value);
       // System.out.println("head: " + head);
-      //Symbol readSymbol = tape.getFromIndex(head);
+      //System.out.println("Caracter leido: " + readSymbol.value);
       mapKey = new AbstractMap.SimpleEntry<State, Symbol>(nextState, readSymbol);
       currentState = nextState;
     }
 
-    System.out.println("Current State " + currentState.getName());
+    //System.out.println("Current State " + currentState.getName());
     if (finalStates.contains(currentState)) {
       return true;
     }
@@ -93,11 +94,11 @@ public class TuringMachine {
     return false;
   }
 
-  void moveRight() {
+  void moveHeadRight() {
     head++;
   }
 
-  void moveLeft() {
+  void moveHeadLeft() {
     head--;
   }
 }

@@ -16,7 +16,6 @@ public class Tape {
     for (int i = 0; i < inputString.length(); i++) {
       tape.addLast(new Symbol(String.valueOf(inputString.charAt(i))));
     }
-    System.out.println(tape.size());
   }
 
   void changeValueOn(int index, Symbol newValue) {
@@ -34,18 +33,7 @@ public class Tape {
     return tape.get(index);
   }
 
-  Symbol getLeftSymbol(int index) {
-    if (--index < 0) {
-      tape.addFirst(whiteSymbol);
-      return tape.get(0);
-    }
-    return tape.get(index);
-  }
+  void printTape() {
 
-  Symbol getRightSymbol(int index) {
-    if (++index == tape.size()) {
-      tape.addLast(whiteSymbol);
-    }
-    return tape.get(index);
   }
 }
