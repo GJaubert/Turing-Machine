@@ -7,6 +7,7 @@ import java.util.Iterator;
 public class Alphabet {
   private Set<Symbol> symbols;
 
+  // Constructor que crea el set de nuevos simbolos
   Alphabet(Set<String> inputSymbols) {
     symbols = new HashSet<Symbol>();
     Iterator<String> iter = inputSymbols.iterator();

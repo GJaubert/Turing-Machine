@@ -1,26 +1,27 @@
 package source.main;
 
-import java.util.*;
+import java.util.Vector;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.AbstractMap;
+import java.util.HashSet;
 
 public class Delta {
 
   private Map<Map.Entry<State, Symbol>, Set<Map.Entry<State, Map.Entry<Symbol, String>>>> transitionsMap;
 
+  // Constructor que crea las transiciones
   Delta(Vector<Vector<String>> inputTransitions) {
     transitionsMap = new HashMap<Map.Entry<State, Symbol>, Set<Map.Entry<State, Map.Entry<Symbol, String>>>>();
     for (int i = 0; i < inputTransitions.size(); i++) {
-      //Left side of main hash entry
+      //  Left side of main hash entry
       State tmpState = new State(inputTransitions.get(i).get(0), false);
       Symbol readSymbol = new Symbol(inputTransitions.get(i).get(1));
       Map.Entry<State, Symbol> tmpEntry = new AbstractMap.SimpleEntry<State, Symbol>(tmpState, readSymbol);
 
       //  Right side of main hash entry
       State destinationState = new State(inputTransitions.get(i).get(2), false);
-      // Vector<Symbol> entryStackSymbols = new Vector<Symbol>();
-      // for (int j = 4; j < inputTransitions.get(i).size(); j++) {
-      //   Symbol tmpSymbol = new Symbol(inputTransitions.get(i).get(j));
-      //   entryStackSymbols.add(tmpSymbol);
-      // }
       Symbol symbolToBeWritten = new Symbol(inputTransitions.get(i).get(3));
       String movement = inputTransitions.get(i).get(4);
       Map.Entry<Symbol, String> symbolAndMove = new AbstractMap.SimpleEntry<Symbol, String>(symbolToBeWritten, movement);

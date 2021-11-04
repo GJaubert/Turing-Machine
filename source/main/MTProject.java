@@ -13,6 +13,7 @@ public class MTProject {
                                             reader.getTapeAlphabet(), reader.getinitialState(),
                                             reader.getWhiteSymbol(), reader.getTransitions(),
                                             reader.getFinalStates());
+      mt.verifyMachine();
       System.out.println("Introduzca una cadena a comprobar (para terminar escriba \"salir\"): ");                                
       String input;
       Scanner userInput = new Scanner(System.in);

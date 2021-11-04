@@ -9,11 +9,13 @@ public class Symbol {
     value = inputValue;
   }
 
+  // Modificamos la funcion hashcode para que los mapas funcionen bien con objetos de esta clase como clave
   @Override
   public int hashCode() {
     return Objects.hash(value);
   }
 
+  // Modificamos la funcion equals para que los mapas funcionen bien con objetos de esta clase como clave
   @Override
   public boolean equals(Object obj) {
     if (this == obj)

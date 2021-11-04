@@ -1,7 +1,11 @@
 package source.main;
 
 import java.io.File;
-import java.util.*;
+import java.util.Scanner;
+import java.util.Collections;
+import java.util.Vector;
+import java.util.Set;
+import java.util.HashSet;
 
 public class MTReader {
 
@@ -16,6 +20,7 @@ public class MTReader {
   private Set<String> finalStates;
   private Vector<Vector<String>> inputTransitions;
 
+  // Constructor del lector y parser de la Maquina de Turing
   MTReader(String inputFile) {
     file_ = new File(inputFile);
     inputStates = new HashSet<String>();
@@ -43,6 +48,7 @@ public class MTReader {
       System.out.println(error);
     }
   }
+
 
   private void removeComments() {
     while (scan_.hasNextLine()) {

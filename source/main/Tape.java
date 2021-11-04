@@ -6,11 +6,13 @@ public class Tape {
   private LinkedList<Symbol> tape;
   private Symbol whiteSymbol;
 
+  //  Crea una cinta vacía
   Tape(Symbol inputWhiteSymbol) {
     tape = new LinkedList<Symbol>();
     whiteSymbol = inputWhiteSymbol;
   }
 
+  // Escribe una cadena dada en la cinta
   void loadTape(String inputString) {
     tape.clear();
     for (int i = 0; i < inputString.length(); i++) {
@@ -42,7 +44,6 @@ public class Tape {
     System.out.println(new String(new char[tape.size() * 4]).replace("\0", "-"));
     for (int i = 0; i < headPosition; i++) {
       System.out.printf("%4s"," ");
-      //System.out.print(new String(new char[5]).replace("\0", " "));
     }
     System.out.printf("%3s\n","↑");
   }

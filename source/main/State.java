@@ -19,6 +19,7 @@ public class State {
     return name_;
   }
 
+  // Modificamos la funcion equals para que los mapas funcionen bien con objetos de esta clase como clave
   @Override
   public boolean equals(Object obj) {
     if (this == obj)
@@ -31,6 +32,7 @@ public class State {
     return (state.name_.equals(this.name_));
   }
 
+  // Modificamos la funcion hashcode para que los mapas funcionen bien con objetos de esta clase como clave
   @Override
   public int hashCode() {
     return Objects.hash(name_);
