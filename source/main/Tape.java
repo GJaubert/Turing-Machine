@@ -33,7 +33,17 @@ public class Tape {
     return tape.get(index);
   }
 
-  void printTape() {
-
+  void printTape(int headPosition) {
+    System.out.println(new String(new char[tape.size() * 4]).replace("\0", "-"));
+    for (int i = 0; i < tape.size(); i++) {
+      System.out.printf("| %1s ", tape.get(i).value);
+    }
+    System.out.print("|\n");
+    System.out.println(new String(new char[tape.size() * 4]).replace("\0", "-"));
+    for (int i = 0; i < headPosition; i++) {
+      System.out.printf("%4s"," ");
+      //System.out.print(new String(new char[5]).replace("\0", " "));
+    }
+    System.out.printf("%3s\n","↑");
   }
 }

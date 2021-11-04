@@ -1,0 +1,27 @@
+# Lee cadenas de 0 y 1 y los separa dejando un símbolo vacio entre los dos grupos.
+# Ej: 0101110 -> 000.1111
+q0 q1 q2 q3 q4 q5 q6 q7 q8
+0 1 x
+0 1 x .
+q0
+.
+q0 q8
+q0 0 q0 0 R 
+q0 1 q1 x R
+q1 1 q1 1 R 
+q1 0 q1 0 R 
+q1 . q2 . L 
+q2 1 q2 1 L
+q2 0 q3 1 L 
+q3 0 q3 0 L 
+q3 1 q3 1 L 
+q3 x q0 0 R 
+q2 x q4 . R 
+q4 1 q4 1 R 
+q4 . q5 1 L 
+q5 0 q5 0 L
+q5 1 q5 1 L 
+q5 . q6 . L
+q6 0 q5 0 L
+q6 . q7 . R
+q7 . q8 . R

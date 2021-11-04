@@ -86,6 +86,7 @@ public class TuringMachine {
       currentState = nextState;
     }
 
+    tape.printTape(head);
     //System.out.println("Current State " + currentState.getName());
     if (finalStates.contains(currentState)) {
       return true;
