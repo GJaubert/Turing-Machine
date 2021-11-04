@@ -20,3 +20,8 @@ Dentro del directorio en el que ya estaba (*"P2_Maquina_Turing/source/main"*) es
     Ejemplo:
     java -cp ../../bin/ source.main.MTProject ../resources/Ejemplo_MT.txt 
 ```
+
+Opciones seleccionadas para la Máquina de Turing:  
+  - Movimiento y escritura simultáneos
+  - Dos únicos movimientos (L y R)
+  - Cinta infinita en ambas direcciones  
