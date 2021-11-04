@@ -17,6 +17,6 @@ Para ejecutar:
 Dentro del directorio en el que ya estaba (*"P2_Maquina_Turing/source/main"*) escriba:   
 ```
     java -cp ../../bin/ source.main.MTProject [Ruta del fichero con la MT deseada]
-    Ej:
+    Ejemplo:
     java -cp ../../bin/ source.main.MTProject ../resources/Ejemplo_MT.txt 
 ```
