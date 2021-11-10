@@ -11,7 +11,7 @@ Debido a problemas con la compatibilidad  en las versiones de java, es recomenda
 
 Para compilar:  
 Sitúese en el directorio "P2_Maquina_Turing/source/main" y escriba:  
-```"javac -d ../../bin ./*.java"```
+ ```"javac -d ../../bin ./*.java"```
 
 Para ejecutar:  
 Dentro del directorio en el que ya estaba (*"P2_Maquina_Turing/source/main"*) escriba:   
